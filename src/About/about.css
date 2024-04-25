@@ -1,0 +1,13 @@
+.bio {
+    border: solid 1px red;
+    border-radius: 20px;
+    background-color: pink;
+    width: 50%;
+    padding: 30px;
+    /* gap: 30px; */
+}
+
+.bio-text {
+    /* background-color: pink; */
+    /* gap: 30px; */
+}
