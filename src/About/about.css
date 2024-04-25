@@ -4,6 +4,10 @@
     box-sizing: border-box;
 } */
 
+.header {
+    margin-left: 80px;
+}
+
 .about-page {
     background-color: aquamarine;
     display: flex;
