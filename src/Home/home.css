@@ -1,3 +1,8 @@
+* {
+    background-color: pink;
+    /* border: solid 2px tomato; */
+}
+
 .banner {
     background-color: yellow;
 }
@@ -5,6 +10,7 @@
 .navbar ul {
     display: flex;
     justify-content: space-around;
+    border: solid 1px red;
 }
 
 .navbar ul li {
@@ -35,4 +41,33 @@
 
 .navbar ul li:hover::after {
     width: 100%;
+}
+
+header {
+    border: solid 1px blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header p {
+    border: solid 2px yellow;
+    width: 50%;
+    font-size: 18px;
+}
+
+.socialLinks {
+    border: solid 1px green;
+    display: flex;
+    width: 30%;
+}
+
+.socialLinks p {
+    display: flex;
+    justify-content: center;
+}
+
+.socialLinks a {
+    text-decoration: none;
+    color: black;
 }
