@@ -1,23 +1,22 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f8f8f8;
 }
 
+/* Header and Navigation */
 header {
-    background-color: plum;
-    color: white;
+    background-color: var(--bg-body);
+    color: black;
     padding: 20px;
     text-align: center;
 }
 
 nav a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     margin-right: 10px;
 }
 
+/* Styling of cards layout on My Projects page */
 #projects {
     display: flex;
     flex-wrap: wrap;
