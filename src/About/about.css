@@ -10,8 +10,8 @@ body, h1, h3, p {
 
 /* Body Styling */
 body {
-    background-color: aquamarine;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: honeydew; */
+    background-color: var(--bg-body);
 }
 
 /* Header Styling */
@@ -30,9 +30,9 @@ body {
 
 /* Biography section styling */
 .bio {
-    border: solid 3px gainsboro;
-    border-radius: 20px;
-    background-color: azure;
+    /* border: solid 3px gainsboro; */
+    /* border-radius: 20px; */
+    /* background-color: azure; */
     font-size: 20px;
     width: 40%;
     padding: 30px;
