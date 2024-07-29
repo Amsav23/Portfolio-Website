@@ -47,6 +47,11 @@ header {
     align-items: center;
 }
 
+img {
+    width: 20rem;
+    height: auto;
+}
+
 main {
     border: solid 1px red;
     text-align: center;
