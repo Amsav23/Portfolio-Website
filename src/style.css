@@ -1,0 +1,149 @@
+/* Global Styles */
+:root {
+    --bg-body: lavender;
+    --fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: var(--fontFamily);
+    /* font-weight: 500; */
+}
+
+header, section, footer {
+    padding: 20px;
+    text-decoration: none;
+}
+
+img {
+    width: 20%;
+    height: auto;
+}
+
+
+/* Header Nav Styling */
+header {
+    background-color: rosybrown;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+nav ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: brown;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+/* End Header Nav Styling */
+
+
+main {
+    background-color: aqua;
+    text-align: center;
+    width: 50%;
+    align-self: center;
+    padding: 20px;
+}
+
+
+/* Specific Styles */
+#about {
+
+}
+
+
+/* Styles for My Projects section */
+#projects {
+    background-color: salmon;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+#projects img {
+    width: 100%;
+    height: auto;
+    margin: .5rem 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.project {
+    width: 22rem;
+    height: auto;
+    background-color: pink;
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+/* projectCards Component Styling */
+
+/* Button Styling */
+.project a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+#contact {
+    /* Styles for Contact section */
+}
+
+/* Add more specific styles as needed */
+
+
+/* Footer */
+/* Socials */
+.socialLinks {
+    border: solid 1px green;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    align-self: center;
+    padding: 20px;
+}
+
+.socialLinks a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
