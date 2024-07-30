@@ -18,8 +18,9 @@ html, body {
     /* font-weight: 500; */
 }
 
-header, section, footer {
+header, main, section, footer {
     padding: 20px;
+    border: solid 2px green;
     text-decoration: none;
 }
 
@@ -78,22 +79,53 @@ nav ul li a:hover::after {
 /* End Header Nav Styling */
 
 
+/* Main Section Styling */
 main {
     background-color: aqua;
+    text-align: center;
+}
+
+.main-container {
+    border: blue solid 2px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+    align-items: center;
+}
+
+.main-container img {
+    width: 30%;
+    border-radius: 50%;
+}
+
+.main-content {
+    width: 50%;
+}
+
+
+/* About Section Styling */
+#about {
+
+}
+
+.about-container {
+    background-color: lavender;
     text-align: center;
     width: 50%;
     align-self: center;
     padding: 20px;
 }
 
-
-/* Specific Styles */
-#about {
-
+.skills {
+    background-color: yellow;
+    padding: 1rem 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 
-/* Styles for My Projects section */
+/* Project Section Styling */
 #projects {
     background-color: rosybrown;
     text-align: center;
@@ -146,7 +178,7 @@ main {
     transition: 0.4s;
 }
 
-/* Contact Styling */
+/* Contact Section Styling */
 #contact {
     /* Styles for Contact section */
 }
