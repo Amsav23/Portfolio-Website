@@ -15,18 +15,22 @@ html, body {
     padding: 0;
     line-height: 1.5;
     font-family: var(--fontFamily);
-    /* font-weight: 500; */
 }
 
-header, main, section, footer {
-    padding: 20px;
-    border: solid 2px green;
+section, footer {
+    padding: 4rem 0;
     text-decoration: none;
+    color: white;
+    background-color: rosybrown;
+}
+
+a {
+    color: white;
 }
 
 img {
-    width: 20%;
-    height: auto;
+    width: 25%;
+    border-radius: 20px;
 }
 
 
@@ -36,10 +40,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    color: white;
 }
 
 header p {
     font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
 }
 
 nav {
@@ -57,7 +67,6 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -66,7 +75,7 @@ nav ul li a::after {
     content: '';
     height: 3px;
     width: 0;
-    background-color: brown;
+    background-color: white;
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -81,47 +90,42 @@ nav ul li a:hover::after {
 
 /* Main Section Styling */
 main {
-    background-color: aqua;
+    /* border: solid 2px purple; */
     text-align: center;
+    background-image: url('/Images/Kitchen.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
 }
 
-.main-container {
-    border: blue solid 2px;
+main h1 {
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+main, #about {
     display: flex;
-    justify-content: space-evenly;
-    margin: 1rem 0;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 4rem;
+}
+
+.content-container {
+    /* border: red solid 2px; */
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
     align-items: center;
 }
 
-.main-container img {
-    width: 30%;
-    border-radius: 50%;
-}
-
-.main-content {
+.text-container {
+    /* border: solid yellow 2px; */
     width: 50%;
-}
-
-
-/* About Section Styling */
-#about {
-
-}
-
-.about-container {
-    background-color: lavender;
+    background-color: rosybrown;
+    padding: 40px;
+    border-radius: 20px;
     text-align: center;
-    width: 50%;
-    align-self: center;
-    padding: 20px;
-}
-
-.skills {
-    background-color: yellow;
-    padding: 1rem 0;
-    font-size: 2rem;
-    display: flex;
-    justify-content: space-around;
 }
 
 
@@ -187,6 +191,16 @@ main {
 
 
 /* Footer */
+.skills {
+    padding: 1rem 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+}
+
+
 /* Socials */
 .socialLinks {
     border: solid 1px green;
