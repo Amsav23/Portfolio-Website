@@ -16,8 +16,8 @@
             <p>Amyln Savarese</p>
             <nav>
                 <ul>
-                    <li><a href="#about">About Me</a></li>
                     <li><a href="#projects">My Projects</a></li>
+                    <li><a href="#about">About Me</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -45,7 +45,7 @@
                         <br>If you're looking for a website that's as functional as it is visually appealing, 
                         let's collaborate and cook up something exceptional!<br>
                     </p>
-                    <button type="submit">Contact Me</button>
+                    <button type="submit">Let's get cooking!</button>
                 </div>
             </div>
         </main>
@@ -140,10 +140,13 @@
                 <label for="message">Message:</label>
                 <textarea name="message" id="message"></textarea>
 
-                <!-- reCAPTCHA widget -->
-                 <div class="g-recaptcha" data-sitekey="6LeEo0IqAAAAADO03xzCzAshBRQWUC1eLaUnsL91"></div>
+                <!-- <button type="submit" id="submit-btn">Submit</button> -->
+                <button type="submit" class="g-recaptcha"
+                data-sitekey="6LeEo0IqAAAAADO03xzCzAshBRQWUC1eLaUnsL91"
+                data-callback="onSubmit"
+                data-action="submit">Submit</button>
 
-                <button type="submit">Send</button>
+
             </form>
         </section>
         <!-- End Contact Section -->
@@ -168,8 +171,11 @@
 
     <!-- Icon Images -->
     <script src="https://kit.fontawesome.com/5bbc7f059f.js" crossorigin="anonymous"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeEo0IqAAAAADO03xzCzAshBRQWUC1eLaUnsL91"></script>
+
+     <!-- Load reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>

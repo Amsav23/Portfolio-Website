@@ -1,6 +1,5 @@
 /* Global Styles */
 :root {
-    --bg-body: lavender;
     --fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -45,7 +44,7 @@ header {
 }
 
 header p {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 p {
@@ -68,7 +67,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 nav ul li a::after {
@@ -100,8 +99,10 @@ main {
 }
 
 main h1 {
-    background-color: #333;
+    background-color: white;
+    color: rosybrown;
     padding: 1rem 0;
+    font-size: 2.6rem;
 }
 
 main, #about {
@@ -150,7 +151,7 @@ main, #about {
     height: auto;
     margin: .5rem 0;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .project {
