@@ -7,11 +7,13 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault(); // Prevents the form from submitting immediately
   
     // Get the reCAPTCHA token
+    /*If the user has successfully completed the reCAPTCHA challenge 
+    (like clicking the "I'm not a robot" checkbox), this method will return a string token.*/
     const recaptchaResponse = grecaptcha.getResponse();
   
-    if (recaptchaResponse.length === 0) {
-        // If the user hasn't completed the reCAPTCHA
-        alert('Please complete the reCAPTCHA.');
+    if (recaptchaResponse.length === 0) { /* If this condition is true, it means the user needs to 
+        complete the reCAPTCHA before submitting the form. */
+        alert('Please complete the reCAPTCHA.'); // Alert if the user has NOT completed the reCAPTCHA
     } else {
         // If reCAPTCHA is completed, proceed to send form data
         emailjs.send('contact_service', 'contact_form', {
