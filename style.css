@@ -23,8 +23,13 @@ section {
     background-color: rosybrown;
 }
 
+p {
+    font-size: 1.15rem;
+}
+
 a {
     color: white;
+    font-size: 1.2rem;
 }
 
 img {
@@ -47,10 +52,6 @@ header p {
     font-size: 1.8rem;
 }
 
-p {
-    font-size: 1.15rem;
-}
-
 nav {
     width: 50%;
 }
@@ -67,7 +68,6 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    font-size: 1.2rem;
 }
 
 nav ul li a::after {
@@ -89,12 +89,15 @@ nav ul li a:hover::after {
 
 /* Main Section Styling */
 main {
+    display: flex;
     text-align: center;
+    align-items: center;
     background-image: url('/Images/Kitchen.avif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color: white;
+    padding-bottom: 1.5rem;
 }
 
 main h1 {
@@ -102,20 +105,18 @@ main h1 {
     color: rosybrown;
     padding: 1rem 0;
     font-size: 2.6rem;
+    width: 100%;
 }
 
 main, #about {
-    display: flex;
     flex-direction: column;
-    justify-content: space-around;
     margin-bottom: 4rem;
 }
 
-.content-container {
+#about {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin: 2rem 0;
-    align-items: center;
 }
 
 .text-container {
@@ -127,11 +128,12 @@ main, #about {
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 /* End Main Section Styling */
 
 
-/* Socials */
+/* Social Links Styling */
 .socialLinks {
     display: flex;
     justify-content: space-around;
@@ -144,30 +146,41 @@ main, #about {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    font-size: 1.2rem;
     display: flex;
     align-items: center;
     gap: 5px;
 }
-/* End Socials */
+/* End Social Links Styling */
 
+
+/* Button Styling */
+.contact-btn {
+    text-decoration: none;
+    border-radius: 25px;
+}
 
 .submit-btn {
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.contact-btn, .submit-btn {
+    background-color: white;
     color: rosybrown;
     padding: 12px;
-    font-size: 1.2rem;
+    width: 50%;
     border: none;
-    border-radius: 20px;
     margin-top: 2rem;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.submit-btn:hover {
+.contact-btn:hover, .submit-btn:hover {
     background-color: #fff;
+    font-weight: 600;
     cursor: pointer;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Adds shadow on hover */
-
 }
+/* End Button Styling */
 
 
 /* Project Section Styling */
@@ -236,13 +249,17 @@ main, #about {
     align-items: center;
 }
 
+#contact h1 {
+    margin-bottom: 1rem;
+}
+
 #contact-form {
     display: flex;
     flex-direction: column;
 }
 
-#contact h1 {
-    margin-bottom: 1rem;
+#contact-form button {
+    width: 100%;
 }
 
 form label {
@@ -272,22 +289,16 @@ form textarea {
 footer {
     background-color: black;
     color: white;
-    padding: 1.5rem;
+    padding: 1.3rem;
     display: flex;
     justify-content: space-around;
 }
 
-footer p, a {
+footer p, footer a {
     font-size: 0.8rem;
 }
-/* .skills {
-    padding: 1rem 0;
-    font-size: 2rem;
-    display: flex;
-    justify-content: space-around;
-    background-color: white;
-    color: black;
-} */
+/* End Footer */
+
 
 /* Privacy Policy Section */
 .privacy-policy {
@@ -303,4 +314,17 @@ footer p, a {
 
 .privacy-policy a:hover {
     color: rosybrown;
+}
+
+
+/* Media Query Styling */
+@media (max-width: 768px) {
+    main, #about, .content-container {
+        /* width: 1000px; */
+        width: 500px;
+    }
+
+    img {
+        width: 200px;
+    }
 }
