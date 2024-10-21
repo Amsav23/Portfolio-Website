@@ -16,7 +16,7 @@ html, body {
     font-family: var(--fontFamily);
 }
 
-section, footer {
+section {
     padding: 4rem 0;
     text-decoration: none;
     color: white;
@@ -89,7 +89,6 @@ nav ul li a:hover::after {
 
 /* Main Section Styling */
 main {
-    /* border: solid 2px purple; */
     text-align: center;
     background-image: url('/Images/Kitchen.avif');
     background-size: cover;
@@ -113,7 +112,6 @@ main, #about {
 }
 
 .content-container {
-    /* border: red solid 2px; */
     display: flex;
     justify-content: space-around;
     margin: 2rem 0;
@@ -121,12 +119,54 @@ main, #about {
 }
 
 .text-container {
-    /* border: solid yellow 2px; */
+    border: solid white 4px;
     width: 50%;
     background-color: rosybrown;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+/* End Main Section Styling */
+
+
+/* Socials */
+.socialLinks {
+    display: flex;
+    justify-content: space-around;
+    width: 20rem;
+    margin-top: 2rem;
+    align-self: center;
+}
+
+.socialLinks a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* End Socials */
+
+
+.submit-btn {
+    color: rosybrown;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 20px;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Adds shadow on hover */
+
 }
 
 
@@ -183,42 +223,84 @@ main, #about {
 }
 
 .project a:hover {
-    background-color: blue;
+    background-color: rosybrown;
     transition: 0.4s;
 }
+/* End Project Styling */
+
 
 /* Contact Section Styling */
 #contact {
-    border: solid 2px blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Add more specific styles as needed */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact h1 {
+    margin-bottom: 1rem;
+}
+
+form label {
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical; /* user can only adjust msg box vertically */
+}
+
+.g-recaptcha {
+    margin-top: 1rem;
+}
+/* End Contact Section Styling */
 
 
 /* Footer */
-.skills {
+footer {
+    background-color: black;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer p, a {
+    font-size: 0.8rem;
+}
+/* .skills {
     padding: 1rem 0;
     font-size: 2rem;
     display: flex;
     justify-content: space-around;
     background-color: white;
     color: black;
+} */
+
+/* Privacy Policy Section */
+.privacy-policy {
+    height: 100vh;
+    padding: 2rem;
 }
 
-
-/* Socials */
-.socialLinks {
-    border: solid 2px yellow;
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    align-self: center;
-    padding: 20px;
-}
-
-.socialLinks a {
-    text-decoration: none;
+.privacy-policy a {
     color: black;
-    display: flex;
-    align-items: center;
+    font-size: 1rem;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privacy-policy a:hover {
+    color: rosybrown;
 }
