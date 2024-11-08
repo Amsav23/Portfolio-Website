@@ -109,7 +109,7 @@ nav ul li a:hover::after {
 /* End Header Nav Styling */
 
 
-/* Main Section Styling */
+/* Main and About Section Styling */
 main {
     display: flex;
     text-align: center;
@@ -126,7 +126,7 @@ main h1 {
     background-color: white;
     color: rosybrown;
     padding: 1rem 0;
-    font-size: 2.6rem;
+    font-size: 2rem;
     width: 100%;
 }
 
@@ -138,12 +138,17 @@ main, #about {
 #about {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#about img {
+    height: fit-content;
 }
 
 .text-container {
     border: solid white 4px;
-    width: 50%;
+    width: 55%;
     background-color: rosybrown;
     padding: 40px;
     border-radius: 20px;
@@ -152,7 +157,7 @@ main, #about {
     flex-direction: column;
     align-items: center;
 }
-/* End Main Section Styling */
+/* End Main and About Section Styling */
 
 
 /* Social Links Styling */
@@ -229,6 +234,7 @@ main, #about {
 
 #projects h1 {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-container {
@@ -248,8 +254,8 @@ main, #about {
 .project {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 25rem;
+    justify-content: space-evenly;
+    width: 22rem;
     height: auto;
     background-color: white;
     padding: 1.5rem;
@@ -353,14 +359,24 @@ footer p, footer a {
 .privacy-policy a:hover {
     color: rosybrown;
 }
+/* End Privacy Policy Section */
 
 
 /* Media Query Styling */
-@media (min-width: 320px) and (max-width: 768px) {
+@media (max-width: 769px) {
+    main {
+        background-image: none;
+        background-color: rosybrown;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+    
     main .text-container, 
-    .project, 
     #about .text-container {
-        width: 85%;
+        width: 90%;
+        padding: 1.5rem;
     }
 
     #about {
@@ -391,6 +407,11 @@ footer p, footer a {
         right: 1rem;
     }
 
+    #contact {
+        text-align: center;
+        padding: 4rem 5rem;
+    }
+
     /* Show nav links when the checkbox is checked (for the hamburger menu) */
     #menu-toggle:checked + .hamburger + nav ul {
         display: flex;
@@ -405,5 +426,11 @@ footer p, footer a {
     }
     #menu-toggle:checked + .hamburger span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@media (max-width: 426px) {
+    .project {
+        width: 90%;
     }
 }
