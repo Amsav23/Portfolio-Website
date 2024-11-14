@@ -1,25 +1,34 @@
 (function() {
-  emailjs.init('kgKwvTqUKVEEFh0Lt'); // Initialize EmailJS with your user ID
+  emailjs.init('kgKwvTqUKVEEFh0Lt'); // 1. Initialize EmailJS with your user ID
 })();
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevents the form from submitting immediately
 
-  // Get the reCAPTCHA token
+  // 2. Get a response (token) from reCAPTCHA
+  // 'recaptchaResponse' will hold the reCAPTCHA token, which is a unique string generated when the user completes the reCAPTCHA challenge.
+  // 'grecaptcha.getResponse' retrieves the current reCAPTCHA token, which is needed to verify that the user passed the reCAPTCHA test.
   const recaptchaResponse = grecaptcha.getResponse();
 
-  // Check if reCAPTCHA is completed
+  // 3a. Check if the user clicked the reCAPTCHA check box
   if (recaptchaResponse.length === 0) {
-      alert('Please complete the reCAPTCHA.'); // Alert if the user has NOT completed the reCAPTCHA
+      alert('Please complete the reCAPTCHA.'); // Alert pops up if the user has NOT completed the reCAPTCHA
   } else {
-      // Send the notification email to yourself
+      // 3b. I need to initiate an async request to send an email through the EmailJS service
+      // If the user clicked the check box and filled out the required fields, send the contact form to me
+      // 'contact_service' is the "service ID" registered with EmailJS
+      // 'contact_form' is the "template ID" created in EmailJS
       emailjs.send('contact_service', 'contact_form', {
           name: document.querySelector('[name="user_name"]').value,
           email: document.querySelector('[name="user_email"]').value,
           message: document.querySelector('[name="message"]').value,
-          'g-recaptcha-response': recaptchaResponse // Include the reCAPTCHA token
+          'g-recaptcha-response': recaptchaResponse // Include the reCAPTCHA token to allow the server to verify that the user completed the reCAPTCHA challenge.
       })
+      // 4. Because 'emailjs.send' returns a Promise, use '.then()' to define what should happen if the email sends successfully and '.catch()' to handle any errors.
+      // 'response' is a single parameter which represents the result returned from the Promise if it resolves successfully.
       .then(function(response) {
+          // 'response.status' logs the status of the response, which is usually a numeric code (e.g., '200' for a successful HTTP request).
+          // 'response.text' is useful for debugging and understanding what happened during the request (e.g., 'response.text' could say "Message sent successfully" in the console).
           console.log('Notification sent successfully!', response.status, response.text);
           alert('Form submitted successfully!');
 
@@ -35,68 +44,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
       });
   }
 });
-
-
-// ORIGINAL JS before the JS above worked
-// // Initialize EmailJS
-// (function() {
-//     emailjs.init('kgKwvTqUKVEEFh0Lt');
-//   })();
-
-// document.getElementById('contact-form').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Prevents the form from submitting immediately
-  
-//     // Get the reCAPTCHA token
-//     /*If the user has successfully completed the reCAPTCHA challenge 
-//     (like clicking the "I'm not a robot" checkbox), this method will return a string token.*/
-//     const recaptchaResponse = grecaptcha.getResponse();
-  
-//     if (recaptchaResponse.length === 0) { /* If this condition is true, it means the user needs to 
-//           complete the reCAPTCHA before submitting the form. */
-//           alert('Please complete the reCAPTCHA.'); // Alert if the user has NOT completed the reCAPTCHA
-//     } else {
-//           // If reCAPTCHA is completed, proceed to send form data
-//           // 1. Send the notification email to yourself
-//           emailjs.send('contact_service', 'contact_form', {
-//               // My form data
-//               name: document.querySelector('[name="user_name"]').value,
-//               email: document.querySelector('[name="user_email"]').value,
-//               message: document.querySelector('[name="message"]').value,
-//               'g-recaptcha-response': recaptchaResponse // Make sure the token is named exactly 'g-recaptcha-response'
-//           })
-
-//           .then(function(response) {
-//               console.log('Notification sent successfully!', response.status, response.text);
-
-//               // 2. Reset the reCAPTCHA to generate a new token
-//               grecaptcha.reset();
-
-//                // 3. Send the auto-reply email
-//                 emailjs.send('contact_service', 'contact_reply', {
-//                   name: document.querySelector('[name="user_name"]').value,
-//                   email: document.querySelector('[name="user_email"]').value,
-//                   'g-recaptcha-response': recaptchaResponse // Use the same token for auto-reply
-//                 })
-//                 .then(function(response) {
-//                     console.log('Auto-reply sent successfully!', response.status, response.text);
-//                     alert('Form submitted successfully!');
-                
-//                     // Reset the form after both emails have sent successfully
-//                     document.getElementById('contact-form').reset(); // Reset form fields
-//                 })
-//                 .catch(function(error) {
-//                     console.log('Auto-reply FAILED...', error);
-//                     alert('Error sending auto-reply email.');
-//                 });
-//           })
-//           .catch(function(error) {
-//               console.log('Notification FAILED...', error);
-//               alert('Error submitting form.');
-//           });
-//       }
-// });
-
-
 
   
 
