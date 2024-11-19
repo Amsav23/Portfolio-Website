@@ -10,8 +10,7 @@
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+    height: 100%;
     line-height: 1.5;
     font-family: var(--fontFamily);
 }
@@ -27,9 +26,13 @@ p {
     font-size: 1.15rem;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-decoration: none;
 }
 
@@ -38,162 +41,15 @@ img {
     border-radius: 20px;
 }
 
-
-/* Header Nav Styling */
-header {
-    background-color: rosybrown;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    color: white;
-}
-
-header p {
-    font-size: 1.8rem;
-}
-
-/* NEW ADDITION */
-.off-screen-menu {
-    background-color: rosybrown;
-    border: white solid 2px;
-    border-radius: 25px;
-    height: 100vh;
-    width: 100%;
-    max-width: 350px;
-    position: fixed;
-    top: 0;
-    right: -350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 3rem;
-    transition: .3s ease;
-}
-
-.off-screen-menu.active {
-    right: 0;
-}
-
-nav {
-    padding: 1rem;
-    display: flex;
-}
-
-.ham-menu {
-    text-decoration: none;
-    list-style: none;
-    height: 50px;
-    width: 50px;
-    margin-left: auto;
-    position: relative;
-    cursor: pointer;
-}
-
-.ham-menu span {
-    height: 5px;
-    width: 100%;
-    background-color: white;
-    border-radius: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%);
-    transition: .3s ease;
-}
-
-.ham-menu span:nth-child(1) {
-    top: 25%;
-}
-
-.ham-menu span:nth-child(3) {
-    top: 75%;
-}
-
-.ham-menu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.ham-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/* OLD CODE */
-/* nav {
-    width: 50%;
-} */
-
-/* nav ul {
-    display: flex;
-    justify-content: space-between;
-} */
-
-/* nav ul li {
-    display: inline-block;
-    position: relative;
-} */
-
-
-/* .off-screen-menu ul li a::after {
-    content: '';
-    height: 3px;
-    width: 0;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-} */
-
-/* nav ul li a:hover::after {
-    width: 100%;
-} */
-/* End Header Nav Styling */
-
-
-/* Main and About Section Styling */
-main {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    background-image: url('/Images/Kitchen.avif');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: white;
-    padding-bottom: 1.5rem;
-}
-
-main h1 {
+h1 {
     background-color: white;
     color: rosybrown;
-    padding: 1rem 0;
-    font-size: 2rem;
-    width: 100%;
-}
-
-main, #about {
-    flex-direction: column;
-    margin-bottom: 4rem;
-}
-
-#about {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#about img {
-    height: fit-content;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    width: 100%;
 }
 
 .text-container {
@@ -207,7 +63,146 @@ main, #about {
     flex-direction: column;
     align-items: center;
 }
-/* End Main and About Section Styling */
+
+/* Nav Styling */
+.navbar {
+    background-color: rosybrown;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-branding {
+    font-size: 1.8rem;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+/* End Nav Styling */
+
+
+/* Main Section Styling */
+main {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/Images/Kitchen.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    padding: 55px 0;
+    margin-bottom: 2rem;
+}
+/* End Main Section Styling */
+
+
+/* Project Section Styling */
+#projects {
+    background-color: rosybrown;
+    text-align: center;
+}
+
+#projects h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.project-card img {
+    width: 100%;
+    margin: .5rem 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 22rem;
+    height: auto;
+    background-color: white;
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+.project-card h2, .project-card p {
+    color: black;
+}
+
+.project-card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.project-card a:hover {
+    background-color: rosybrown;
+    transition: 0.4s;
+}
+/* End Project Styling */
+
+
+/* About Section Styling */
+#about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#about h1 {
+    color: white;
+    background-color: transparent;
+}
+
+#about img {
+    height: fit-content;
+}
+/* End About Section Styling */
 
 
 /* Social Links Styling */
@@ -246,105 +241,11 @@ main, #about {
 /* End Social Links Styling */
 
 
-/* Button Styling */
-.contact-btn {
-    text-decoration: none;
-    border-radius: 25px;
-}
-
-.submit-btn {
-    font-size: 1.2rem;
-    border-radius: 20px;
-}
-
-.contact-btn, .submit-btn {
-    background-color: white;
-    color: rosybrown;
-    padding: 12px;
-    width: 50%;
-    border: none;
-    margin-top: 2rem;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-btn:hover, .submit-btn:hover {
-    background-color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Adds shadow on hover */
-}
-/* End Button Styling */
-
-
-/* Project Section Styling */
-#projects {
-    background-color: rosybrown;
-    text-align: center;
-}
-
-#projects h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.project-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.project img {
-    width: 100%;
-    height: auto;
-    margin: .5rem 0;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-.project {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 22rem;
-    height: auto;
-    background-color: white;
-    padding: 1.5rem;
-    margin: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-}
-
-.project h2, .project p {
-    color: black;
-}
-
-.project a {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin-top: 25px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-}
-
-.project a:hover {
-    background-color: rosybrown;
-    transition: 0.4s;
-}
-/* End Project Styling */
-
-
 /* Contact Section Styling */
 #contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#contact h1 {
-    margin-bottom: 1rem;
 }
 
 #contact-form {
@@ -377,6 +278,36 @@ form textarea {
     margin-top: 1rem;
 }
 /* End Contact Section Styling */
+
+
+/* Button Styling */
+.contact-btn {
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.submit-btn {
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
+
+.contact-btn, .submit-btn {
+    background-color: white;
+    color: rosybrown;
+    padding: 12px;
+    width: 50%;
+    border: none;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btn:hover, .submit-btn:hover {
+    background-color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Adds shadow on hover */
+}
+/* End Button Styling */
 
 
 /* Footer */
@@ -413,20 +344,24 @@ footer p, footer a {
 
 
 /* Media Query Styling */
-@media (max-width: 769px) {
+@media (max-width: 768px) {
+    h1, .nav-branding {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+
     main {
         background-image: none;
         background-color: rosybrown;
+        padding: 10px;
     }
 
-    main h1 {
-        font-size: 1.5rem;
-    }
-    
-    main .text-container, 
-    #about .text-container {
-        width: 90%;
-        padding: 1.5rem;
+    .text-container {
+        border: none;
     }
 
     #about {
@@ -434,27 +369,8 @@ footer p, footer a {
         align-items: center;
     }
 
-    #about .text-container {
-        margin-bottom: 2rem;
-    }
-
     img {
         width: 35%;
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon on tablet and smaller */
-    }
-
-    nav ul {
-        display: none; /* Hide nav links initially on small screens */
-        /* flex-direction: column; */ /* Stack links vertically */
-        gap: 1rem;
-        position: absolute;
-        background-color: lightblue;
-        padding: 1rem;
-        top: 0.7rem;
-        right: 1rem;
     }
 
     #contact {
@@ -462,25 +378,45 @@ footer p, footer a {
         padding: 4rem 5rem;
     }
 
-    /* Show nav links when the checkbox is checked (for the hamburger menu) */
-    #menu-toggle:checked + .hamburger + nav ul {
-        display: flex;
+    /* Hamburger Menu Styling */
+    .hamburger {
+        display: block;
     }
 
-    /* When checked, transform the hamburger into an 'X' */
-    #menu-toggle:checked + .hamburger span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
     }
-    #menu-toggle:checked + .hamburger span:nth-child(2) {
-        opacity: 0; /* Hide the middle line */
-    }
-    #menu-toggle:checked + .hamburger span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-}
 
-@media (max-width: 426px) {
-    .project {
-        width: 90%;
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
     }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu a {
+        color: rosybrown;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+    /* End Hamburger Menu Styling */
 }

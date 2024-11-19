@@ -8,29 +8,35 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <!-- Header Nav Section -->
+    <!-- Nav Section -->
     <header>
-        <p>Amyln Savarese</p>
-        <div class="off-screen-menu">
-            <ul>
-                <li><a href="#projects">My Projects</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <nav class="navbar">
+            <a href="#" class="nav-branding">Amyln Savarese</a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">My Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
-        </div>
-        <nav>
-            <div class="ham-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
-    <!-- End Header Nav Section -->
+    <!-- End Nav Section -->
 
     <!-- Main Section -->
+    <h1>Welcome to my Digital Kitchen!</h1>
     <main>
-        <h1>Welcome to my Digital Kitchen!</h1><br>
         <div class="text-container">
             <p>
                 Welcome to my digital kitchen, where I combine the essential ingredients of code and 
@@ -52,11 +58,10 @@
     <!-- End Main Section -->
 
     <!-- Projects Section -->
+    <h1>My Projects</h1>
     <section id="projects">
-        <h1>My Projects</h1>
-
         <div class="project-container">
-            <div class="project">
+            <div class="project-card">
                 <h2>Newsletter Sign-Up Form</h2>
                 <img src="/Images/NewsletterSignUpScreenshot.png" alt="NewsletterSignUp Screenshot">
                 <p>
@@ -67,7 +72,7 @@
                 <a href="https://github.com/Amsav23/Newsletter-SignUp-Form.git" target="_blank" rel="noopener">GitHub</a>
             </div>
 
-            <div class="project">
+            <div class="project-card">
                 <h2>Rick and Morty</h2>
                 <img src="/Images/RickandMortyScreenshot.png" alt="Rick and Morty Screenshot">
                 <p>
@@ -78,7 +83,7 @@
                 <a href="https://github.com/Amsav23/rick-and-morty.git" target="_blank" rel="noopener">GitHub</a>
             </div>
             
-            <div class="project">
+            <div class="project-card">
                 <h2>Fake Store</h2>
                 <img src="/Images/FakeStore.png" alt="Fake Store Screenshot">
                 <p>
@@ -125,8 +130,8 @@
     <!-- End About Section -->
 
     <!-- Contact Section -->
+    <h1>Let's cook up something exceptional!</h1>
     <section id="contact">
-        <h1>Let's cook up something exceptional!</h1>
         <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="user_name" required>
