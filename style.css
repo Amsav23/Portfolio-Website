@@ -13,13 +13,12 @@ html, body {
     height: 100%;
     line-height: 1.5;
     font-family: var(--fontFamily);
+    background-color: rosybrown;
 }
 
 section {
-    padding: 4rem 0;
     text-decoration: none;
     color: white;
-    background-color: rosybrown;
 }
 
 p {
@@ -49,14 +48,14 @@ h1 {
     text-align: center;
     padding: 1rem 0;
     font-size: 1.8rem;
-    width: 100%;
+    width: 100vw;
 }
 
 .text-container {
     border: solid white 4px;
     width: 55%;
     background-color: rosybrown;
-    padding: 40px;
+    padding: 3rem;
     border-radius: 20px;
     text-align: center;
     display: flex;
@@ -85,12 +84,10 @@ h1 {
     font-size: 1.8rem;
 }
 
-.nav-link {
-    transition: 0.7s ease;
-}
-
 .nav-link:hover {
+    transition: 0.1s ease;
     color: black;
+    font-weight: 600;
 }
 
 .hamburger {
@@ -122,7 +119,6 @@ main {
     background-position: center;
     color: white;
     padding: 55px 0;
-    margin-bottom: 2rem;
 }
 /* End Main Section Styling */
 
@@ -133,15 +129,12 @@ main {
     text-align: center;
 }
 
-#projects h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
 .project-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 60px;
+    border: solid 2px blue;
 }
 
 .project-card img {
@@ -167,31 +160,17 @@ main {
 .project-card h2, .project-card p {
     color: black;
 }
-
-.project-card a {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin-top: 25px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-}
-
-.project-card a:hover {
-    background-color: rosybrown;
-    transition: 0.4s;
-}
 /* End Project Styling */
 
 
 /* About Section Styling */
 #about {
+    border: solid 2px yellow;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 #about h1 {
@@ -251,6 +230,7 @@ main {
 #contact-form {
     display: flex;
     flex-direction: column;
+    padding: 2rem 0;
 }
 
 #contact-form button {
@@ -280,7 +260,7 @@ form textarea {
 /* End Contact Section Styling */
 
 
-/* Button Styling */
+/* All Button Styling */
 .contact-btn {
     text-decoration: none;
     border-radius: 25px;
@@ -294,11 +274,10 @@ form textarea {
 .contact-btn, .submit-btn {
     background-color: white;
     color: rosybrown;
-    padding: 12px;
-    width: 50%;
+    padding: 12px 50px;
     border: none;
     margin-top: 2rem;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.1s ease, box-shadow 0.1s ease;
 }
 
 .contact-btn:hover, .submit-btn:hover {
@@ -307,7 +286,27 @@ form textarea {
     cursor: pointer;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); /* Adds shadow on hover */
 }
-/* End Button Styling */
+
+.project-card-btn {
+    background-color: white;
+    border: solid 2px rosybrown;
+    color: rosybrown;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    /* display: block; */
+    font-weight: 500;
+}
+
+.project-card-btn:hover {
+    background-color: rosybrown;
+    color: white;
+    transition: 0.2s;
+    font-weight: 600;
+}
+/* All Button Styling */
 
 
 /* Footer */
@@ -327,37 +326,49 @@ footer p, footer a {
 
 /* Privacy Policy Section */
 .privacy-policy {
-    height: 100vh;
     padding: 2rem;
+    background-color: white;
+    line-height: 2;
 }
 
-.privacy-policy a {
+.back-btn {
     color: black;
     font-size: 1rem;
-    transition: color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: solid 1px black;
+    transition: color 0.1s ease, box-shadow 0.1s ease;
 }
 
-.privacy-policy a:hover {
+.back-btn:hover {
     color: rosybrown;
+    border-bottom: solid 1px rosybrown;
 }
 /* End Privacy Policy Section */
 
 
 /* Media Query Styling */
+@media (max-width: 425px) {
+    .contact-btn {
+        padding: 12px;
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     h1, .nav-branding {
         font-size: 1.5rem;
-        padding: 20px;
     }
 
     .text-container {
         width: 100%;
+        margin: 0;
+        padding: 1.5rem;
     }
 
     main {
         background-image: none;
         background-color: rosybrown;
-        padding: 10px;
+        padding: 1rem;
+        margin-bottom: 60px;
     }
 
     .text-container {
@@ -369,13 +380,17 @@ footer p, footer a {
         align-items: center;
     }
 
+    #about h1 {
+        color: rosybrown;
+        background-color: white;
+    }
+
     img {
         width: 35%;
     }
 
     #contact {
         text-align: center;
-        padding: 4rem 5rem;
     }
 
     /* Hamburger Menu Styling */
@@ -417,6 +432,10 @@ footer p, footer a {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .nav-link:hover {
+        color: rosybrown;
     }
     /* End Hamburger Menu Styling */
 }
