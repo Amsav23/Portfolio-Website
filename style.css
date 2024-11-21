@@ -176,6 +176,11 @@ main {
     background-color: transparent;
 }
 
+.about-link {
+    font-size: 1.15rem;
+    border-bottom: solid 1px;
+}
+
 #about img {
     height: fit-content;
 }
